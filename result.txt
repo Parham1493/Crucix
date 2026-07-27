@@ -1,0 +1,7 @@
+lib\alerts\discord.mjs:2:// Mirrors TelegramAlerter architecture: same eval logic, same tier system, same dedup
+lib\alerts\discord.mjs:290:  // Identical logic to TelegramAlerter — shared eval pipeline
+lib\alerts\discord.mjs:324:        const { TelegramAlerter } = await import('./telegram.mjs');
+lib\alerts\discord.mjs:325:        const tgInstance = new TelegramAlerter({ botToken: null, chatId: null });
+lib\alerts\telegram.mjs:33:export class TelegramAlerter {
+server.mjs:17:import { TelegramAlerter } from './lib/alerts/telegram.mjs';
+server.mjs:43:const telegramAlerter = new TelegramAlerter(config.telegram);
