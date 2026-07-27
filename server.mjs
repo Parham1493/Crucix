@@ -417,8 +417,8 @@ async function start() {
   ║  Health:     http://localhost:${port}/api/health${' '.repeat(Math.max(0, 4 - String(port).length))}║
   ║  Refresh:    Every ${config.refreshIntervalMinutes} min${' '.repeat(Math.max(0, 20 - String(config.refreshIntervalMinutes).length))}║
   ║  LLM:        ${(config.llm.provider || 'disabled').padEnd(31)}║
-  ║  Telegram:   ${config.telegram.botToken ? 'enabled' : 'disabled'}${' '.repeat(config.telegram.botToken ? 24 : 23)}║
-  ║  Discord:    ${config.discord?.botToken ? 'enabled' : config.discord?.webhookUrl ? 'webhook only' : 'disabled'}${' '.repeat(config.discord?.botToken ? 24 : config.discord?.webhookUrl ? 20 : 23)}║
+  ║  Telegram:   ${config.telegram.botToken ? 'enabled' : 'disabled'}${' '.repeat(Math.max(0, config.telegram.botToken ? 24 : 23))}║
+  ║  Discord:    ${config.discord?.botToken ? 'enabled' : config.discord?.webhookUrl ? 'webhook only' : 'disabled'}${' '.repeat(Math.max(0, config.discord?.botToken ? 24 : config.discord?.webhookUrl ? 20 : 23))}║
   ╚══════════════════════════════════════════════╝
   `);
 
