@@ -1,0 +1,23 @@
+name: Crucix Sweep
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Crucix
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install packages
+        run: npm install
+
+      - name: Run Crucix sweep
+        run: npm run sweep
