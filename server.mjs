@@ -409,18 +409,10 @@ async function start() {
   const port = config.port;
 
   console.log(`
-  ╔══════════════════════════════════════════════╗
-  ║           CRUCIX INTELLIGENCE ENGINE         ║
-  ║          Local Palantir · 26 Sources         ║
-  ╠══════════════════════════════════════════════╣
-  ║  Dashboard:  http://localhost:${port}${' '.repeat(Math.max(0, 14 - String(port).length))}║
-  ║  Health:     http://localhost:${port}/api/health${' '.repeat(Math.max(0, 4 - String(port).length))}║
-  ║  Refresh:    Every ${config.refreshIntervalMinutes} min${' '.repeat(Math.max(0, 20 - String(config.refreshIntervalMinutes).length))}║
-  ║  LLM:        ${(config.llm.provider || 'disabled').padEnd(31)}║
-  ║  Telegram:   ${config.telegram.botToken ? 'enabled' : 'disabled'}${' '.repeat(Math.max(0, config.telegram.botToken ? 24 : 23))}║
-  ║  Discord:    ${config.discord?.botToken ? 'enabled' : config.discord?.webhookUrl ? 'webhook only' : 'disabled'}${' '.repeat(Math.max(0, config.discord?.botToken ? 24 : config.discord?.webhookUrl ? 20 : 23))}║
-  ╚══════════════════════════════════════════════╝
-  `);
+CRUCIX INTELLIGENCE ENGINE
+Dashboard: http://localhost:${port}
+Health: http://localhost:${port}/api/health
+`);
 
   const server = app.listen(port);
 
